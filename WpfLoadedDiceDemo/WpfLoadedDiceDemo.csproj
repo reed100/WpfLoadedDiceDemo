@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>dice_icon_160199.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\Dice1.png" />
+    <None Remove="Images\Dice2.png" />
+    <None Remove="Images\Dice3.png" />
+    <None Remove="Images\Dice4.png" />
+    <None Remove="Images\Dice5.png" />
+    <None Remove="Images\Dice6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="dice_icon_160199.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Dice1.png" />
+    <Resource Include="Images\Dice2.png" />
+    <Resource Include="Images\Dice3.png" />
+    <Resource Include="Images\Dice4.png" />
+    <Resource Include="Images\Dice5.png" />
+    <Resource Include="Images\Dice6.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

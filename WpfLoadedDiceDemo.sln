@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfLoadedDiceDemo", "WpfLoadedDiceDemo\WpfLoadedDiceDemo.csproj", "{7BCDCBB9-F2FB-487C-AC18-00C01FE27ED9}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "WpfLoadedDiceSetup", "WpfLoadedDiceSetup\WpfLoadedDiceSetup.vdproj", "{4A2E48A3-3C6B-4E32-866E-4A6BA2E83430}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BCDCBB9-F2FB-487C-AC18-00C01FE27ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCDCBB9-F2FB-487C-AC18-00C01FE27ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCDCBB9-F2FB-487C-AC18-00C01FE27ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCDCBB9-F2FB-487C-AC18-00C01FE27ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A2E48A3-3C6B-4E32-866E-4A6BA2E83430}.Debug|Any CPU.ActiveCfg = Debug
+		{4A2E48A3-3C6B-4E32-866E-4A6BA2E83430}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF925C7D-16B9-4A53-9113-0F345839FE6D}
+	EndGlobalSection
+EndGlobal

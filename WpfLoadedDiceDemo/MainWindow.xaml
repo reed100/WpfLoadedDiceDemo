@@ -1,0 +1,194 @@
+﻿<Window x:Class="WpfLoadedDiceDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Simpson Strong-Tie" 
+        Height="550" 
+        Width="700" 
+        WindowStyle="ThreeDBorderWindow"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <!--header-->
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,0,0,1">
+            <Grid x:Name="grdHeader">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Style="{StaticResource TextBlockHeader1}" Text="Loaded Dice Demo"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!--body-->
+        <Grid x:Name="grdBody" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--left side - input configuration-->
+            <Border Grid.Column="0" BorderBrush="Black" BorderThickness="0,0,1,0">
+                <Grid x:Name="grdConfig" Grid.Row="1" Grid.Column="0" Margin="12,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--die #1 header-->
+                    <TextBlock Grid.Row="0" Style="{StaticResource TextBlockFieldSectionHeader}" Text="Dice 1"/>
+
+                    <!--die #1 options-->
+                    <StackPanel Grid.Row="1" Margin="24,0,0,0" Orientation="Vertical">
+
+                        <TextBlock Style="{StaticResource TextBlockFieldLabel}" Text="Favored"/>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="rdoDice1Favored1">
+                                <Image Source="/Images/Dice1.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice1Favored2">
+                                <Image Source="/Images/Dice2.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice1Favored3">
+                                <Image Source="/Images/Dice3.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice1Favored4">
+                                <Image Source="/Images/Dice4.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice1Favored5">
+                                <Image Source="/Images/Dice5.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice1Favored6">
+                                <Image Source="/Images/Dice6.png" Height="20" Width="20"/>
+                            </RadioButton>
+                        </StackPanel>
+
+                        <TextBlock Style="{StaticResource TextBlockFieldLabel}" Text="Weight"/>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <Slider x:Name="sldDice1Weight" Minimum="1" Maximum="5" Orientation="Horizontal" IsSnapToTickEnabled="True" Ticks="1,2,3,4,5" Interval="1" TickFrequency="1" TickPlacement="None" Width="150"/>
+                                <TickBar Maximum="{Binding Path=Maximum, ElementName=sldDice1Weight}" Minimum="{Binding Path=Minimum, ElementName=sldDice1Weight}" TickFrequency="1" Height="4" Fill="Black" ReservedSpace="1" />
+                            </StackPanel>
+                            <Border BorderThickness="1" BorderBrush="Black" Height="25" Width="25" Margin="12,0">
+                                <TextBlock Text="{Binding ElementName=sldDice1Weight, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <!--die #2 header-->
+                    <TextBlock Grid.Row="2" Style="{StaticResource TextBlockFieldSectionHeader}" Text="Dice 2"/>
+
+                    <!--die #2 options-->
+                    <StackPanel Grid.Row="3" Margin="24,0,0,0" Orientation="Vertical">
+
+                        <TextBlock Style="{StaticResource TextBlockFieldLabel}" Text="Favored"/>
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton x:Name="rdoDice2Favored1" VerticalContentAlignment="Top">
+                                <Image Source="/Images/Dice1.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice2Favored2">
+                                <Image Source="/Images/Dice2.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice2Favored3">
+                                <Image Source="/Images/Dice3.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice2Favored4">
+                                <Image Source="/Images/Dice4.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice2Favored5">
+                                <Image Source="/Images/Dice5.png" Height="20" Width="20"/>
+                            </RadioButton>
+                            <RadioButton x:Name="rdoDice2Favored6">
+                                <Image Source="/Images/Dice6.png" Height="20" Width="20"/>
+                            </RadioButton>
+                        </StackPanel>
+
+                        <TextBlock Style="{StaticResource TextBlockFieldLabel}" Text="Weight"/>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
+                                <Slider x:Name="sldDice2Weight" Minimum="1" Maximum="5" Orientation="Horizontal" IsSnapToTickEnabled="True" Ticks="1,2,3,4,5" Interval="1" TickFrequency="1" TickPlacement="None" Width="150"/>
+                                <TickBar Maximum="{Binding Path=Maximum, ElementName=sldDice2Weight}" Minimum="{Binding Path=Minimum, ElementName=sldDice2Weight}" TickFrequency="1" Height="4" Fill="Black" ReservedSpace="1" />
+                            </StackPanel>
+
+                            <Border BorderThickness="1" BorderBrush="Black" Height="25" Width="25" Margin="12,0">
+                                <TextBlock Text="{Binding ElementName=sldDice2Weight, Path=Value, UpdateSourceTrigger=PropertyChanged}" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+                        </StackPanel>
+
+                    </StackPanel>
+
+                    <!--num rolls and submit-->
+                    <StackPanel Grid.Row="4" Margin="24,24,0,0" Orientation="Horizontal">
+                        <TextBlock x:Name="lblNumRolls" Style="{StaticResource TextBlockFieldLabel}" VerticalAlignment="Center" Text="Number of Rolls"/>
+                        <TextBox x:Name="txtNumRolls" Text="5" />
+                        <Button x:Name="btnSubmit" Grid.Row="2" Grid.Column="3" Margin="12,0,0,0" Style="{StaticResource ButtonPrimary}" Content="Submit" IsDefault="True" Click="btnSubmit_Click" />
+                    </StackPanel>
+
+                    <!-- error messages -->
+                    <TextBlock x:Name="lblErrorMessage" Grid.Row="5" Margin="0,12,0,0" Style="{StaticResource TextBlockErrorMessage}" HorizontalAlignment="Left" />
+
+                </Grid>
+            </Border>
+
+            <!--right side - results-->
+            <Grid x:Name="grdResults" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!--right/top: current roll-->
+                <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                    <Border BorderThickness="1" BorderBrush="Black" Height="75" Width="75" Margin="12">
+                        <Image x:Name="imgDice1Results" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Images/Dice1.png" />
+                    </Border>
+                    <Border BorderThickness="1" BorderBrush="Black" Height="75" Width="75" Margin="12">
+                        <Image x:Name="imgDice2Results" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/Images/Dice6.png"/>
+                    </Border>
+                </StackPanel>
+
+                <!--right/bottom: results list-->
+                <ListView x:Name="lvResults" Grid.Row="1" Margin="0,0,0,24" HorizontalAlignment="Center" VerticalAlignment="Top" d:ItemsSource="{d:SampleData ItemCount=5}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Roll #" 
+                                DisplayMemberBinding="{Binding RollNum}" Width="50" />
+                            <GridViewColumn Header="Die 1 Value"
+                                DisplayMemberBinding="{Binding Die1Value}" Width="75"/>
+                            <GridViewColumn Header="Die 2 Value"
+                                DisplayMemberBinding="{Binding Die2Value}" Width="75"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+            </Grid>
+            <Border x:Name="brdResultsOverlay" Grid.Column="1" Background="#F9F9F9">
+                <TextBlock Style="{StaticResource TextBlockInstructions}" Text="Please select the favored dice, weight, number of rolls and then tap Submit."/>
+            </Border>
+
+        </Grid>
+
+        <!--footer-->
+        <Border Grid.Row="2" BorderBrush="Black" BorderThickness="0,1,0,0">
+            <Grid x:Name="grdFooter" Background="#FFFFFE">
+                <Button x:Name="btnReset" Style="{StaticResource ButtonSecondary}" Content="Reset" HorizontalAlignment="Left" Click="btnReset_Click" />
+                <Button x:Name="btnClose" Style="{StaticResource ButtonSecondary}" Content="Close" HorizontalAlignment="Right" Click="btnClose_Click" />
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</Window>
